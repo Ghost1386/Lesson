@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Lesson.Common.Dto.UserAuthDto;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a asp-controller="Home" asp-action="GetUsers" method="Get">Get Users</a>
+}
+
+<a asp-action="CreateUser" accesskey="token">Create</a>
+<form asp-controller="Home" asp-action="Auth" method="Post">
+    <div class="form-group">
+        <label class="control-label">Email: </label>
+        @Html.TextBoxFor(x => x.Email, new { size = 32 })
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Password: </label>
+        @Html.TextBoxFor(x => x.Password, new { size = 32 })
+    </div>
+    
+    <input class="button" type="submit" value="Sign In">
+</form>
+<a asp-controller="Home" asp-action="LogOut">LogOut</a>
+</body>
+</html>

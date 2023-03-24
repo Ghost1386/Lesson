@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lesson.BusinessLogic\Lesson.BusinessLogic.csproj" />
+      <ProjectReference Include="..\Lesson.Common\Lesson.Common.csproj" />
+      <ProjectReference Include="..\Lesson.Mapper\Lesson.Mapper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
+    </ItemGroup>
+
+</Project>
